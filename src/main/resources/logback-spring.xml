@@ -1,0 +1,25 @@
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+    <contextName>practice-spring-boot</contextName>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%contextName %d %thread %-5level %logger %M - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="TIMEROLLFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>rookie.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>rookie.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%contextName %d %thread %-5level %logger %M - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="TIMEROLLFILE"/>
+    </root>
+</configuration>
