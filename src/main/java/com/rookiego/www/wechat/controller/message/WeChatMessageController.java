@@ -53,7 +53,7 @@ public class WeChatMessageController extends BasicController {
             String messageContent = MessageUtils.readStreamToString(inputStream);
             LOGGER.info(String.format("%s %s", "messageContent", messageContent));
             Map<String, Object> map = XmlUtils.parseXMLString(messageContent);
-            String returnString = "<xml> <ToUserName>< ![CDATA[" + map.get("FromUserName") + "] ]></ToUserName> <FromUserName>< ![CDATA[" + map.get("ToUserName") + "] ]></FromUserName> <CreateTime>" + new Date().getTime() + "</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[功能开发中...] ]></Content> </xml>";
+            String returnString = "<xml><ToUserName><![CDATA[" + map.get("FromUserName") + "]]></ToUserName><FromUserName><![CDATA[" + map.get("ToUserName") + "]]></FromUserName><CreateTime>" + map.get("CreateTime") + "</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[功能开发中...]]></Content></xml>";
             LOGGER.info(String.format("%s %s", "returnString", returnString));
             return returnString;
         } catch (IOException e) {
