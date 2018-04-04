@@ -1,6 +1,7 @@
 package com.rookiego.www.wechat.controller.message;
 
 import com.rookiego.www.wechat.BasicController;
+import com.rookiego.www.wechat.domain.wechat.TextMessage;
 import com.rookiego.www.wechat.utils.MessageUtils;
 import com.rookiego.www.wechat.utils.SHA1;
 import com.rookiego.www.wechat.utils.XmlUtils;
@@ -14,11 +15,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 import java.util.Map;
 
 /**
- * Created by rookie on 2018/3/31.
+ * <b>类名称:</b>WeChatMessageController<br/>
+ * <b>类注释:</b>微信公众平台开发配置验证、收发消息<br/>
+ * <b>类描述:</b><br/>
+ * <b>创建人:</b>rookie<br/>
+ * <b>修改人:</b>rookie<br/>
+ * <b>修改时间:</b>2018年04月04日 11时48分27秒<br/>
+ * <b>修改备注:</b><br/>
+ *
+ * @version 1.0.0<br/>
  */
 @RestController
 public class WeChatMessageController extends BasicController {
@@ -52,15 +60,20 @@ public class WeChatMessageController extends BasicController {
             InputStream inputStream = request.getInputStream();
             String messageContent = MessageUtils.readStreamToString(inputStream);
             LOGGER.info(String.format("%s %s", "messageContent", messageContent));
-            Map<String, Object> map = XmlUtils.parseXMLString(messageContent);
-            String returnString = "<xml><ToUserName><![CDATA[" + map.get("FromUserName") + "]]></ToUserName><FromUserName><![CDATA[" + map.get("ToUserName") + "]]></FromUserName><CreateTime>" + map.get("CreateTime") + "</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[功能开发中...]]></Content></xml>";
-            LOGGER.info(String.format("%s %s", "returnString", returnString));
-            return returnString;
+
+            Map<String, Object> map = XmlUtils.getMap(messageContent);
+
+            TextMessage textMessage = new TextMessage();
+            textMessage.setToUserName((String) map.get("FromUserName"));
+            textMessage.setFromUserName((String) map.get("ToUserName"));
+            textMessage.setContent("功能开发中");
+            textMessage.setCreateTime(String.valueOf(System.currentTimeMillis()));
+            textMessage.setMsgType("text");
+
+            return XmlUtils.getXml(textMessage);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
         return "";
     }
 

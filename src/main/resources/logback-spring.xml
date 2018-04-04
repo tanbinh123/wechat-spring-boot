@@ -8,9 +8,9 @@
     </appender>
 
     <appender name="TIMEROLLFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>rookie.log</file>
+        <file>logs/rookie.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>rookie.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>logs/rookie.log.%d{yyyy-MM-dd}</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
