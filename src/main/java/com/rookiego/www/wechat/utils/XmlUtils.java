@@ -1,7 +1,7 @@
 package com.rookiego.www.wechat.utils;
 
 import com.rookiego.www.wechat.domain.wechat.TextMessage;
-import org.apache.commons.logging.LogFactory;
+import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -76,7 +76,7 @@ public class XmlUtils {
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
                 Method method = object.getClass().getMethod("get" + name);
                 String value = (String) method.invoke(object);
-                if (value != null && !"".equalsIgnoreCase(value.trim())) {
+                if (StringUtils.isEmpty(StringUtils.trim(value))) {
                     Element element = rootElement.addElement(name);
                     element.setText(value);
                 }
