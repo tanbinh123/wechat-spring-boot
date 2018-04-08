@@ -2,7 +2,7 @@ package com.rookiego.www.wechat.domain.wechat;
 
 /**
  * <b>类名称:</b>TextMessage<br/>
- * <b>类注释:</b>微信公众平台消息-文字消息<br/>
+ * <b>类注释:</b>微信公众平台消息-小视频消息<br/>
  * <b>类描述:</b><br/>
  * <b>创建人:</b>rookie<br/>
  * <b>修改人:</b>rookie<br/>
@@ -11,7 +11,7 @@ package com.rookiego.www.wechat.domain.wechat;
  *
  * @version 1.0.0<br/>
  */
-public class TextMessage {
+public class ShortVideoMessage {
     //开发者微信号
     private String toUserName;
     //发送方帐号
@@ -19,9 +19,11 @@ public class TextMessage {
     //消息创建时间 （整型）
     private String createTime;
     //text
-    private String msgType = "text";
-    //文本消息内容
-    private String content;
+    private String msgType = "shortvideo";
+    //视频消息媒体id，可以调用多媒体文件下载接口拉取数据。
+    private String mediaId;
+    //视频消息缩略图的媒体id，可以调用多媒体文件下载接口拉取数据。
+    private String thumbMediaId;
     //消息id，64位整型
     private String msgId;
 
@@ -57,12 +59,20 @@ public class TextMessage {
         this.msgType = msgType;
     }
 
-    public String getContent() {
-        return content;
+    public String getMediaId() {
+        return mediaId;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setMediaId(String mediaId) {
+        this.mediaId = mediaId;
+    }
+
+    public String getThumbMediaId() {
+        return thumbMediaId;
+    }
+
+    public void setThumbMediaId(String thumbMediaId) {
+        this.thumbMediaId = thumbMediaId;
     }
 
     public String getMsgId() {

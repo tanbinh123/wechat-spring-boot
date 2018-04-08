@@ -11,7 +11,7 @@ package com.rookiego.www.wechat.domain.wechat;
  *
  * @version 1.0.0<br/>
  */
-public class TextMessage {
+public class LinkMessage {
     //开发者微信号
     private String toUserName;
     //发送方帐号
@@ -19,9 +19,13 @@ public class TextMessage {
     //消息创建时间 （整型）
     private String createTime;
     //text
-    private String msgType = "text";
-    //文本消息内容
-    private String content;
+    private String msgType = "link";
+    //消息标题
+    private String title;
+    //消息描述
+    private String description;
+    //消息链接
+    private String url;
     //消息id，64位整型
     private String msgId;
 
@@ -57,12 +61,28 @@ public class TextMessage {
         this.msgType = msgType;
     }
 
-    public String getContent() {
-        return content;
+    public String getTitle() {
+        return title;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getMsgId() {
