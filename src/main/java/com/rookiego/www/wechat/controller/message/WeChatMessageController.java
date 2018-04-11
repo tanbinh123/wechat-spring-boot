@@ -1,7 +1,7 @@
 package com.rookiego.www.wechat.controller.message;
 
 import com.rookiego.www.wechat.BasicController;
-import com.rookiego.www.wechat.domain.wechat.TextMessage;
+import com.rookiego.www.wechat.domain.external.TextMessage;
 import com.rookiego.www.wechat.utils.MessageUtils;
 import com.rookiego.www.wechat.utils.SHA1;
 import com.rookiego.www.wechat.utils.XmlUtils;

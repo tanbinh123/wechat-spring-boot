@@ -1,6 +1,6 @@
 package com.rookiego.www.wechat.utils;
 
-import com.rookiego.www.wechat.domain.wechat.TextMessage;
+import com.rookiego.www.wechat.domain.external.TextMessage;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;

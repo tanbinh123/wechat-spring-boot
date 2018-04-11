@@ -1,8 +1,8 @@
-package com.rookiego.www.wechat.domain.wechat;
+package com.rookiego.www.wechat.domain.external;
 
 /**
  * <b>类名称:</b>TextMessage<br/>
- * <b>类注释:</b>微信公众平台消息-文字消息<br/>
+ * <b>类注释:</b>微信公众平台消息-地理位置消息<br/>
  * <b>类描述:</b><br/>
  * <b>创建人:</b>rookie<br/>
  * <b>修改人:</b>rookie<br/>
@@ -11,7 +11,7 @@ package com.rookiego.www.wechat.domain.wechat;
  *
  * @version 1.0.0<br/>
  */
-public class LinkMessage {
+public class LocationMessage {
     //开发者微信号
     private String toUserName;
     //发送方帐号
@@ -19,13 +19,15 @@ public class LinkMessage {
     //消息创建时间 （整型）
     private String createTime;
     //text
-    private String msgType = "link";
-    //消息标题
-    private String title;
-    //消息描述
-    private String description;
-    //消息链接
-    private String url;
+    private String msgType = "location";
+    //地理位置维度
+    private String location_X;
+    //地理位置经度
+    private String location_Y;
+    //地图缩放大小
+    private String scale;
+    //地理位置信息
+    private String label;
     //消息id，64位整型
     private String msgId;
 
@@ -61,28 +63,36 @@ public class LinkMessage {
         this.msgType = msgType;
     }
 
-    public String getTitle() {
-        return title;
+    public String getLocation_X() {
+        return location_X;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setLocation_X(String location_X) {
+        this.location_X = location_X;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLocation_Y() {
+        return location_Y;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setLocation_Y(String location_Y) {
+        this.location_Y = location_Y;
     }
 
-    public String getUrl() {
-        return url;
+    public String getScale() {
+        return scale;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setScale(String scale) {
+        this.scale = scale;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public String getMsgId() {

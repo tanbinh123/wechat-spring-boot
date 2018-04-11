@@ -1,31 +1,31 @@
-package com.rookiego.www.wechat.domain.wechat;
+package com.rookiego.www.wechat.domain.external;
 
 /**
- * <b>类名称:</b>VoiceMessage<br/>
- * <b>类注释:</b>微信公众平台消息-语音消息<br/>
+ * <b>类名称:</b>TextMessage<br/>
+ * <b>类注释:</b>微信公众平台消息-文字消息<br/>
  * <b>类描述:</b><br/>
  * <b>创建人:</b>rookie<br/>
  * <b>修改人:</b>rookie<br/>
- * <b>修改时间:</b>2018年04月08日 14时43分48秒<br/>
+ * <b>修改时间:</b>2018年04月08日 14时36分14秒<br/>
  * <b>修改备注:</b><br/>
  *
  * @version 1.0.0<br/>
  */
-public class VoiceMessage {
+public class LinkMessage {
     //开发者微信号
     private String toUserName;
     //发送方帐号
     private String fromUserName;
     //消息创建时间 （整型）
     private String createTime;
-    //image
-    private String msgType = "voice";
-    //语音格式，如amr，speex等
-    private String format;
-    //图片消息媒体id，可以调用多媒体文件下载接口拉取数据。
-    private String mediaId;
-    //语音识别结果，UTF8编码
-    private String recognition;
+    //text
+    private String msgType = "link";
+    //消息标题
+    private String title;
+    //消息描述
+    private String description;
+    //消息链接
+    private String url;
     //消息id，64位整型
     private String msgId;
 
@@ -61,28 +61,28 @@ public class VoiceMessage {
         this.msgType = msgType;
     }
 
-    public String getFormat() {
-        return format;
+    public String getTitle() {
+        return title;
     }
 
-    public void setFormat(String format) {
-        this.format = format;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getMediaId() {
-        return mediaId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setMediaId(String mediaId) {
-        this.mediaId = mediaId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getRecognition() {
-        return recognition;
+    public String getUrl() {
+        return url;
     }
 
-    public void setRecognition(String recognition) {
-        this.recognition = recognition;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getMsgId() {
@@ -92,4 +92,5 @@ public class VoiceMessage {
     public void setMsgId(String msgId) {
         this.msgId = msgId;
     }
+
 }
