@@ -75,8 +75,10 @@ public class WeChatMessageController extends BasicController {
             textMessage.setContent("功能开发中");
             textMessage.setCreateTime(String.valueOf(System.currentTimeMillis()));
             textMessage.setMsgType("text");
+            String responseMessage = XmlUtils.getXml(textMessage);
+            LOGGER.info("message reply to user is " + responseMessage);
 
-            return XmlUtils.getXml(textMessage);
+            return responseMessage;
         } catch (IOException e) {
             e.printStackTrace();
         }
