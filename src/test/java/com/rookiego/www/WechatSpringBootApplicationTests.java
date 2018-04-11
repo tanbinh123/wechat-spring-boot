@@ -21,10 +21,10 @@ public class WechatSpringBootApplicationTests {
     @Test
     public void contextLoads() {
         Map<String, Object> map = new HashMap<>();
-        map.put("msgId", "123456");
-        map.put("msgType", "test");
-        map.put("msgContent", "{\"name\":\"wpc\"}");
-        map.put("openId", "21344613sfasfasfa");
+        map.put("MsgId", "123456");
+        map.put("MsgType", "test");
+        map.put("msgContent", "{\"name\":\"王鹏程\"}");
+        map.put("FromUserName", "21344613sfasfasfa");
         map.put("createTime", "2018-04-11 21:28:00");
 
         int row = weChatMessageDAO.insertReceivedMessage(map);
