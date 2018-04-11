@@ -76,7 +76,7 @@ public class XmlUtils {
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
                 Method method = object.getClass().getMethod("get" + name);
                 String value = (String) method.invoke(object);
-                if (StringUtils.isEmpty(StringUtils.trim(value))) {
+                if (!StringUtils.isEmpty(StringUtils.trim(value))) {
                     Element element = rootElement.addElement(name);
                     element.setText(value);
                 }
