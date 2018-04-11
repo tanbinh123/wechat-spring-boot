@@ -2,6 +2,7 @@ package com.rookiego.www.wechat.controller.message;
 
 import com.rookiego.www.wechat.BasicController;
 import com.rookiego.www.wechat.domain.external.TextMessage;
+import com.rookiego.www.wechat.service.WeChatMessageServiceI;
 import com.rookiego.www.wechat.utils.MessageUtils;
 import com.rookiego.www.wechat.utils.SHA1;
 import com.rookiego.www.wechat.utils.XmlUtils;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -31,6 +33,9 @@ import java.util.Map;
 @RestController
 public class WeChatMessageController extends BasicController {
     private static final Logger LOGGER = LoggerFactory.getLogger(WeChatMessageController.class);
+
+    @Resource
+    private WeChatMessageServiceI weChatMessageServiceI;
 
     @GetMapping("weChatMessage")
     public String verifyMessage(HttpServletRequest request, HttpServletResponse response) {
@@ -62,6 +67,7 @@ public class WeChatMessageController extends BasicController {
             LOGGER.info(String.format("%s %s", "messageContent", messageContent));
 
             Map<String, Object> map = XmlUtils.getMap(messageContent);
+            int row = weChatMessageServiceI.handlerReceiveMessage(messageContent, map);
 
             TextMessage textMessage = new TextMessage();
             textMessage.setToUserName((String) map.get("FromUserName"));
