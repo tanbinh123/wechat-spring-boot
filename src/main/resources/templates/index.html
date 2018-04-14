@@ -27,12 +27,20 @@
 
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree" lay-filter="left-menu-nav">
+            <ul class="layui-nav layui-nav-tree" lay-filter="left-menu-nav" id="left-tree-nav">
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">微信消息管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-id="1">接收消息列表</a></dd>
-                        <dd><a href="javascript:;" data-id="2">微信客服管理</a></dd>
+                        <dd><a href="javascript:;" data-id="1" data-url="messageManage/list.html">接收消息列表</a></dd>
+                        <dd><a href="javascript:;" data-id="2" data-url="messageManage/list.html">微信客服管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">系统管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-id="3" data-url="messageManage/list.html">用户管理</a></dd>
+                        <dd><a href="javascript:;" data-id="4" data-url="messageManage/list.html">角色管理</a></dd>
+                        <dd><a href="javascript:;" data-id="5" data-url="messageManage/list.html">权限管理</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -43,13 +51,9 @@
         <div class="layui-tab layui-tab-brief" lay-allowClose="true" lay-filter="content-tab">
             <ul class="layui-tab-title">
             </ul>
-            <div class="layui-tab-content">
+            <div class="layui-tab-content" style="top:60px;position: absolute;bottom: 0;width: 100%;padding: 0;">
             </div>
         </div>
-    </div>
-
-    <div class="layui-footer">
-        底部固定区域
     </div>
 </div>
 <script src="../static/layui/layui.js"></script>
@@ -59,24 +63,32 @@
         var element = layui.element;
         var $ = layui.$;
 
-        element.on('nav(left-menu-nav)', function (ele) {
-            console.log($(ele));
-            console.log($(ele));
-            var tabTile = $(ele).text();
-            var tabId = $(ele).attr('data-id');
-            addTab(tabTile, tabId);
+
+        $("#left-tree-nav a[data-id]").on('click', function () {
+            var tabTile = $(this).html();
+            var tabId = $(this).attr('data-id');
+            var url = $(this).attr('data-url');
+            addTab(tabTile, tabId, url);
         });
 
-        function addTab(tabTitle, tabId) {
-            $()
+        function addTab(tabTitle, tabId, url) {
+            var liArr = $('.layui-tab-title').find('li[lay-id=' + tabId + ']');
+            var content = 'hello' + tabId;
+            if (url != null && typeof url != undefined && url.length != 0) {
+                content = '<iframe src="' + url + '" style="border: none;width: 100%; height: 100%;position: absolute"></iframe>';
+            }
 
-            element.tabAdd('content-tab', {
-                title: tabTitle,
-                content: 'hello',
-                id: tabId
-            });
+            if (liArr.length == 0) {
+                element.tabAdd('content-tab', {
+                    title: tabTitle,
+                    content: content,
+                    id: tabId
+                });
+                element.tabChange('content-tab', tabId);
+            } else {
+                element.tabChange('content-tab', tabId);
+            }
         }
-
 
     });
 </script>

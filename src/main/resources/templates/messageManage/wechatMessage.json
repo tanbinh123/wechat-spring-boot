@@ -1,0 +1,67 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    },
+    {
+      "msgId": "1",
+      "msgType": "text",
+      "openId": "120522101",
+      "createTime": "2018-04-10 01:01:01"
+    }
+  ]
+}
