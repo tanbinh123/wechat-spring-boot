@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>首页</title>
-    <link rel="stylesheet" th:href="@{/layui/css/layui.css}"/>
+    <link rel="stylesheet" href="../static/layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -31,16 +31,16 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">微信消息管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-id="1" data-url="messageManage/list.html">接收消息列表</a></dd>
-                        <dd><a href="javascript:;" data-id="2" data-url="messageManage/list.html">微信客服管理</a></dd>
+                        <dd><a href="javascript:;" data-id="1" data-url="messageManage/list.html" th:attr="data-url=@{receiveMessage/list}">接收消息列表</a></dd>
+                        <dd><a href="javascript:;" data-id="2" data-url="messageManage/list.html" th:attr="data-url=@{receiveMessage/list}">微信客服管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">系统管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-id="3" data-url="messageManage/list.html">用户管理</a></dd>
-                        <dd><a href="javascript:;" data-id="4" data-url="messageManage/list.html">角色管理</a></dd>
-                        <dd><a href="javascript:;" data-id="5" data-url="messageManage/list.html">权限管理</a></dd>
+                        <dd><a href="javascript:;" data-id="3" data-url="messageManage/list.html" th:attr="data-url=@{receiveMessage/list}">用户管理</a></dd>
+                        <dd><a href="javascript:;" data-id="4" data-url="messageManage/list.html" th:attr="data-url=@{receiveMessage/list}">角色管理</a></dd>
+                        <dd><a href="javascript:;" data-id="5" data-url="messageManage/list.html" th:attr="data-url=@{receiveMessage/list}">权限管理</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -56,8 +56,8 @@
         </div>
     </div>
 </div>
-<script th:src="@{/layui/layui.js}"></script>
-<script th:inline="javascript">
+<script src="../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script>
     layui.use(['layer', 'element'], function () {
         var layer = layui.layer;
         var element = layui.element;

@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>首页</title>
-    <link rel="stylesheet" href="../../static/layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
 </head>
 <body style="margin: 5px">
-<table id="wechatMessageTable" lay-filter="wechatMessageTableFilter"></table>
-
+<table id="demo" lay-filter="test" data-url="../../static/wechatMessage.json"
+       th:attr="data-url=@{/wechatMessage.json}"></table>
 </div>
-<script src="../../static/layui/layui.js"></script>
-<script>
+<script src="../../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+<script th:inline="none">
     layui.use('table', function () {
         var table = layui.table;
+        var $ = layui.$;
+        var url = $('#demo').attr('data-url');
 
         table.render({
-            elem: '#wechatMessageTable',
-            url: './wechatMessage.json',
+            elem: '#demo',
+            url: url,
             page: true,
             cols: [[
-                {field: 'msgId', title: '消息ID'},
-                {field: 'msgType', title: '消息类型'},
-                {field: 'openId', title: 'openId'},
-                {field: 'createTime', title: '创建时间'}
+                {field: 'msgId', title: 'ID'}
+                , {field: 'msgType', title: '用户名'}
+                , {field: 'openId', title: '性别'}
+                , {field: 'createTime', title: '城市'}
             ]]
         });
 
