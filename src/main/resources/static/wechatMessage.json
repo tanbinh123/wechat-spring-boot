@@ -1,67 +1,35 @@
 {
-  "code": 0,
-  "msg": "",
-  "count": 1000,
-  "data": [
+  "msg":"",
+  "code":0,
+  "data":[
     {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
+      "createTime":1523528642000,
+      "msgContent":"<xml><ToUserName><![CDATA[gh_ebd6be777936]]></ToUserName><FromUserName><![CDATA[oz8xgtx2gCgmlV_9qApnfgi3Nu_8]]></FromUserName><CreateTime>1523528721</CreateTime><MsgType><![CDATA[event]]></MsgType><Event><![CDATA[subscribe]]></Event><EventKey><![CDATA[]]></EventKey></xml>",
+    "msgId":"1804121824019799001",
+    "msgType":"event",
+    "openId":"oz8xgtx2gCgmlV_9qApnfgi3Nu_8"
     },
     {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
+      "createTime":1523528722000,
+      "msgContent":"<xml><ToUserName><![CDATA[gh_ebd6be777936]]></ToUserName><FromUserName><![CDATA[oz8xgtx2gCgmlV_9qApnfgi3Nu_8]]></FromUserName><CreateTime>1523528721</CreateTime><MsgType><![CDATA[event]]></MsgType><Event><![CDATA[subscribe]]></Event><EventKey><![CDATA[]]></EventKey></xml>",
+    "msgId":"1804121825219209002",
+    "msgType":"event",
+    "openId":"oz8xgtx2gCgmlV_9qApnfgi3Nu_8"
     },
     {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
+      "createTime":1523528622000,
+      "msgContent":"<xml><ToUserName><![CDATA[gh_ebd6be777936]]></ToUserName><FromUserName><![CDATA[oz8xgtx2gCgmlV_9qApnfgi3Nu_8]]></FromUserName><CreateTime>1523528621</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[哈哈]]></Content><MsgId>6543505602147309684</MsgId></xml>",
+    "msgId":"6543505602147309684",
+    "msgType":"text",
+    "openId":"oz8xgtx2gCgmlV_9qApnfgi3Nu_8"
     },
     {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
-    },
-    {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
-    },
-    {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
-    },
-    {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
-    },
-    {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
-    },
-    {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
-    },
-    {
-      "msgId": "1",
-      "msgType": "text",
-      "openId": "120522101",
-      "createTime": "2018-04-10 01:01:01"
+      "createTime":"2018-04-20 18:19:00",
+      "msgContent":"haha",
+    "msgId":"6545341687781519788",
+    "msgType":"text",
+    "openId":"oz8xgtx2gCgmlV_9qApnfgi3Nu_8"
     }
-  ]
+  ],
+  "count":4
 }
