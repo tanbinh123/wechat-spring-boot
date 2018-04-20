@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="../../static/layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
 </head>
 <body style="margin: 5px">
-<table id="demo" lay-filter="test" data-url="../../static/wechatMessage.json"
-       th:attr="data-url=@{/wechatMessage.json}"></table>
+<table id="demo" lay-filter="test" data-url=""
+       th:attr="data-url=@{/receiveMessage/listData}"></table>
 </div>
 <script src="../../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
 <script th:inline="none">
@@ -22,10 +22,11 @@
             url: url,
             page: true,
             cols: [[
-                {field: 'msgId', title: 'ID'}
-                , {field: 'msgType', title: '用户名'}
-                , {field: 'openId', title: '性别'}
-                , {field: 'createTime', title: '城市'}
+                {field: 'msgId', title: '消息ID'}
+                , {field: 'msgType', title: '消息类型'}
+                , {field: 'openId', title: 'openId'}
+                , {field: 'msgContent', title: '消息内容'}
+                , {field: 'createTime', title: '创建时间'}
             ]]
         });
 
