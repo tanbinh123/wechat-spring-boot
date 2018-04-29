@@ -20,4 +20,7 @@ public interface WeChatMessageDAO {
 
     @Select("select count(*) from rookie_received_message")
     int queryAllCount();
+
+    @Select("select * from rookie_received_message where msg_id=#{msgId} limit 1")
+    ReceiveMessage queryOneByMsgId(@Param("msgId") String msgId);
 }

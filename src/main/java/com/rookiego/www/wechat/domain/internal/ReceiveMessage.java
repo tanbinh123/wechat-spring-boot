@@ -1,5 +1,6 @@
 package com.rookiego.www.wechat.domain.internal;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.ibatis.type.Alias;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ public class ReceiveMessage {
     private String msgType;
     private String msgContent;
     private String openId;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     public String getMsgId() {

@@ -1,5 +1,6 @@
 package com.rookiego.www.wechat.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.rookiego.www.wechat.dao.WeChatMessageDAO;
 import com.rookiego.www.wechat.service.WeChatMessageServiceI;
 import com.rookiego.www.wechat.utils.SequenceHelper;
@@ -21,7 +22,7 @@ public class WeChatMessageServiceImpl implements WeChatMessageServiceI {
 
     @Override
     public int handlerReceiveMessage(String messageContent, Map<String, Object> map) {
-        map.put("msgContent", messageContent);
+        map.put("msgContent", JSON.toJSONString(map));
         map.put("createTime", new Date());
         if (StringUtils.isEmpty((String) map.get("MsgId"))) {
             map.put("MsgId", SequenceHelper.getNextSequence());

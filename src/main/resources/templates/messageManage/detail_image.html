@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>图片消息详情页</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
+    <style>
+        table{
+            table-layout: fixed;
+        }
+        table tr td {
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+<table class="layui-table">
+    <tbody>
+        <tr>
+            <td>openId</td>
+            <td th:text="${receiveMessage.openId}">120522119</td>
+        </tr>
+        <tr>
+            <td>类型</td>
+            <td th:text="${receiveMessage.msgType}">文本</td>
+        </tr>
+        <tr>
+            <td>发送时间</td>
+            <td th:text="${#dates.format(receiveMessage.createTime,'yyyy-MM-dd HH:mm:ss')}">2018-04-29 23:12:00</td>
+        </tr>
+        <tr>
+            <td>图片地址</td>
+            <td th:text="${msgContentMap['PicUrl']}">Hello rookie</td>
+        </tr>
+        <tr>
+            <td>媒体ID</td>
+            <td th:text="${msgContentMap['MediaId']}">Hello rookie</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+<script src="../../static/layui/layui.js" th:src="@{/layui/layui.js}"></script>
+
+</html>
