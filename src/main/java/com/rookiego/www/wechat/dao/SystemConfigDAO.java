@@ -17,13 +17,13 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface SystemConfigDAO {
 
-    @Select("select * from system_config where config_score=#{configScore} and config_key=#{configKey} limit 1")
-    SystemConfig queryOne(@Param("configScore") String configScore, @Param("configKey") String configKey);
+    @Select("select * from system_config where config_scope=#{configScope} and config_key=#{configKey} limit 1")
+    SystemConfig queryOne(@Param("configScope") String configScope, @Param("configKey") String configKey);
 
-    @Select("select config_value from system_config where config_score=#{configScore} and config_key=#{configKey} limit 1")
-    String queryConfigValue(@Param("configScore") String configScore, @Param("configKey") String configKey);
+    @Select("select config_value from system_config where config_scope=#{configScope} and config_key=#{configKey} limit 1")
+    String queryConfigValue(@Param("configScope") String configScope, @Param("configKey") String configKey);
 
-    @Update("update system_config set config_value=#{configValue},update_time=now(),extend_info=#{extendInfo} where config_key=#{configKey} and config_scope=#{configScore}")
+    @Update("update system_config set config_value=#{configValue},update_time=now(),extend_info=#{extendInfo} where config_key=#{configKey} and config_scope=#{configScope}")
     int updateOneConfig(SystemConfig systemConfig);
 
     @Insert("insert into system_config values (#{configKey},#{configValue},#{configScope},#{createTime},#{updateTime},#{extendInfo})")

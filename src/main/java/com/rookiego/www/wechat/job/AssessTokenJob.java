@@ -85,7 +85,7 @@ public class AssessTokenJob implements SimpleJob {
         systemConfig = new SystemConfig();
         systemConfig.setConfigKey(SystemConfigConst.WX_ACCESSTOKEN);
         systemConfig.setConfigValue((String) map.get("access_token"));
-        systemConfig.setConfigScore(SystemConfigConst.SCORE_WEIXIN);
+        systemConfig.setConfigScope(SystemConfigConst.SCORE_WEIXIN);
         systemConfig.setExtendInfo(result);
         systemConfig.setCreateTime(new Date());
         systemConfig.setUpdateTime(new Date());

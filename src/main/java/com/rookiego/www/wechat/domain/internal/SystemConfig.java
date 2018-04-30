@@ -16,7 +16,7 @@ import java.util.Date;
 public class SystemConfig {
     private String configKey;
     private String configValue;
-    private String configScore;
+    private String configScope;
     private Date createTime;
     private Date updateTime;
     private String extendInfo;
@@ -37,12 +37,12 @@ public class SystemConfig {
         this.configValue = configValue;
     }
 
-    public String getConfigScore() {
-        return configScore;
+    public String getConfigScope() {
+        return configScope;
     }
 
-    public void setConfigScore(String configScore) {
-        this.configScore = configScore;
+    public void setConfigScope(String configScope) {
+        this.configScope = configScope;
     }
 
     public Date getCreateTime() {

@@ -26,7 +26,7 @@ public class HttpClientHelper {
     private static final Logger LOGGER = LoggerFactory.getLogger(HttpClientHelper.class);
 
     public static String sendPost(String url) {
-        LOGGER.info("send http post ", url);
+        LOGGER.info("send http post url [" + url + "]");
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
         HttpPost httpPost = new HttpPost(url);
@@ -35,7 +35,7 @@ public class HttpClientHelper {
             CloseableHttpResponse httpResponse = httpClient.execute(httpPost);
             HttpEntity httpEntity = httpResponse.getEntity();
             String resultMsg = EntityUtils.toString(httpEntity);
-            LOGGER.info("receive msg is ", resultMsg);
+            LOGGER.info("receive msg is [" + resultMsg + "]");
             return resultMsg;
         } catch (IOException e) {
             e.printStackTrace();
