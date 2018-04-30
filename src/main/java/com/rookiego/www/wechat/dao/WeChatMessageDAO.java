@@ -15,7 +15,7 @@ public interface WeChatMessageDAO {
             "values (#{MsgId},#{MsgType},#{msgContent},#{FromUserName},#{createTime})")
     int insertReceivedMessage(Map<String, Object> map);
 
-    @Select("select * from rookie_received_message limit #{pageNum},#{size}")
+    @Select("select * from rookie_received_message order by create_time desc limit #{pageNum},#{size}")
     List<ReceiveMessage> queryListPage(@Param("pageNum") int pageNum, @Param("size") int size);
 
     @Select("select count(*) from rookie_received_message")
