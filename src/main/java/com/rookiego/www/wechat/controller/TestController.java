@@ -28,6 +28,8 @@ public class TestController extends BasicController {
 
         stringBuffer.append(getRequestParamsString(request));
         stringBuffer.append(getCookiesString(request));
+        stringBuffer.append("ip:");
+        stringBuffer.append(getRemoteIp(request));
 
         //cookie中设置跟踪标识
         String traceId = getValueFromCookie(request, "tj-trace-id");
