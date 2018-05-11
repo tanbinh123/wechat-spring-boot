@@ -52,4 +52,23 @@ public class BasicController {
         return stringBuffer.toString();
     }
 
+    public String getValueFromCookie(HttpServletRequest request, String cookieName) {
+        Cookie[] cookies = request.getCookies();
+
+        for (Cookie cookie : cookies) {
+            if (cookieName.equals(cookie.getName())) {
+                return cookie.getValue();
+            }
+        }
+
+        return null;
+    }
+
+    public void setCookie(HttpServletResponse response, String name, String value, int effectiveTime, String path) {
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(effectiveTime);
+        cookie.setPath(path);
+        response.addCookie(cookie);
+    }
+
 }
